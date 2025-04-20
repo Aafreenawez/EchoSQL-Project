@@ -10,8 +10,13 @@ const Navbar = () => {
     <nav className="bg-gray-700/30 backdrop-blur-lg text-white px-6 py-4 fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo with Image */}
-        <Link to="/" className="flex items-center space-x-3">
-          <img src={logo} alt="Logo" className="w-10 h-10 rounded-full" /> 
+        <Link to="/" className="flex items-center space-x-3 group">
+          {/* Spinning logo on hover */}
+          <img
+            src={logo}
+            alt="Logo"
+            className="w-10 h-10 rounded-full transition-transform duration-700 ease-in-out group-hover:rotate-[360deg]"
+          />
           <span className="text-2xl font-bold text-blue-400">EchoSQL</span>
         </Link>
 

@@ -75,7 +75,6 @@ const Footer = () => {
         </div>
       </div>
 
-
       {/* Glow Effect */}
       <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-80 h-80 bg-blue-500 opacity-10 blur-3xl rounded-full"></div>
     </footer>

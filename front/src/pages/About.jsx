@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Code, BarChart2, Bug } from "lucide-react"; // Updated Icons
+import { Code, BarChart2, Bug } from "lucide-react";
 import zainab from "../assets/zainab.jpeg"; 
 import aafreen from "../assets/aafreen.jpeg"; 
 import sonia from "../assets/sonia.jpeg"; 
@@ -80,55 +80,61 @@ const About = () => {
       >
         <h2 className="text-3xl font-bold text-green-400">Objective</h2>
         <p className="text-gray-300 mt-4 text-lg">
-        The objective of this AI-powered SQL chatbot and data visualization API is 
-        to enable users to interact with SQL databases using natural language, generate and execute queries, 
-        validate SQL syntax, and visualize query results. It integrates Google Gemini AI to convert user questions 
-        into SQL queries dynamically, supports multiple SQL dialects, and ensures query correctness through
-        AI-driven validation. The chatbot can connect to SQL Server, retrieve database schema, and
-        execute queries while handling errors gracefully. Additionally, the API includes AI-powered 
-        data visualization, allowing users to upload CSV/Excel files, generate graphs 
-        (bar charts, line charts, scatter plots, etc.), and analyze trends. 
-        By combining natural language processing (NLP), database interaction, and data visualization, 
-        this project streamlines SQL-based data retrieval and analysis, making it more accessible to users
-        with varying levels of SQL expertise.
+          The objective of this AI-powered SQL chatbot and data visualization API is 
+          to enable users to interact with SQL databases using natural language, generate and execute queries, 
+          validate SQL syntax, and visualize query results. It integrates Google Gemini AI to convert user questions 
+          into SQL queries dynamically, supports multiple SQL dialects, and ensures query correctness through
+          AI-driven validation. The chatbot can connect to SQL Server, retrieve database schema, and
+          execute queries while handling errors gracefully. Additionally, the API includes AI-powered 
+          data visualization, allowing users to upload CSV/Excel files, generate graphs 
+          (bar charts, line charts, scatter plots, etc.), and analyze trends. 
+          By combining natural language processing (NLP), database interaction, and data visualization, 
+          this project streamlines SQL-based data retrieval and analysis, making it more accessible to users
+          with varying levels of SQL expertise.
         </p>
       </motion.div>
 
       {/* Features Section */}
-      <h2 className="text-center text-3xl font-bold mt-12 text-green-400">Key Features</h2>
-      <div className="mt-6 flex flex-wrap justify-center gap-6">
+      <h2 className="text-center text-4xl font-extrabold mt-16 text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 animate-fadeInSlow">
+        Key Features
+      </h2>
+
+      <div className="mt-10 flex flex-wrap justify-center gap-8">
         {[
-          { 
-            icon: <Code size={32} className="text-blue-400" />, 
-            title: "SQL Query Generation", 
+          {
+            icon: <Code size={36} className="text-blue-400 drop-shadow-md" />,
+            title: "SQL Query Generation",
             titleColor: "text-blue-400",
-            desc: "Convert natural language input into optimized SQL queries instantly." 
+            desc: "Convert natural language input into optimized SQL queries instantly.",
           },
-          { 
-            icon: <BarChart2 size={32} className="text-yellow-400" />, 
-            title: "Data Visualization", 
+          {
+            icon: <BarChart2 size={36} className="text-yellow-400 drop-shadow-md" />,
+            title: "Data Visualization",
             titleColor: "text-yellow-400",
-            desc: "Generate interactive charts and graphs from query results." 
+            desc: "Generate interactive charts and graphs from query results.",
           },
-          { 
-            icon: <Bug size={32} className="text-red-400" />, 
-            title: "SQL Query Debugging", 
+          {
+            icon: <Bug size={36} className="text-red-400 drop-shadow-md" />,
+            title: "SQL Query Debugging",
             titleColor: "text-red-400",
-            desc: "Detect and fix SQL errors with AI-powered suggestions." 
+            desc: "Detect and fix SQL errors with AI-powered suggestions.",
           },
         ].map((feature, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: index * 0.2 }}
-            className="bg-gray-800 p-6 w-72 text-center rounded-xl shadow-lg"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: index * 0.3 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-gray-800 to-gray-900 p-6 w-80 text-center rounded-2xl shadow-xl transform hover:scale-105 transition duration-500 hover:shadow-[0_0_30px_#00FFFF40]"
           >
-            <div className="flex justify-center">{feature.icon}</div>
-            <h3 className={`text-lg font-semibold mt-2 ${feature.titleColor}`}>
+            <div className="flex justify-center mb-3 animate-pulse-slow">
+              {feature.icon}
+            </div>
+            <h3 className={`text-xl font-semibold ${feature.titleColor} mb-2`}>
               {feature.title}
             </h3>
-            <p className="text-gray-300 mt-2">{feature.desc}</p>
+            <p className="text-gray-300 text-sm leading-relaxed">{feature.desc}</p>
           </motion.div>
         ))}
       </div>

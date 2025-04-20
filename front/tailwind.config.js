@@ -10,6 +10,7 @@ export default {
         fadeInSlow: "fadeIn 3s ease-in-out forwards",
         fadeIn: "fadeIn 0.5s ease-in-out forwards",
         slideFadeIn: "slideFadeIn 0.5s ease-out forwards",
+        "spin-slow": "spin 5s linear infinite", // 🔧 fixed here with quotes
       },
       keyframes: {
         fadeIn: {
